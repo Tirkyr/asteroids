@@ -20,7 +20,7 @@ class Player(CircleShape):
     def shoot(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         velocity = forward * PLAYER_SHOT_SPEED
-        shot = Shot(self.position, velocity)
+        shot = Shot(self.position.x, self.position.y, velocity)
 
     def draw(self, screen):
         pygame.draw.polygon(screen, "white", self.triangle(), width=LINE_WIDTH)
